@@ -1,0 +1,16 @@
+body {
+    background-color: #121212;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.display-5 {
+    font-weight: 700;
+}
+
+.list-group-item {
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+}

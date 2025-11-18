@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.jumbotron {
+    background-image: url('https://via.placeholder.com/1200x400/000000/FFFFFF?text=Food+Mark');
+    background-color: #000000;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.card {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    color: #ffffff;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.navbar {
+    background-color: #1a1a1a !important;
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+
+.btn-primary:hover {
+    background-color: #cccccc;
+    border-color: #cccccc;
+}
+
+.btn-outline-success {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.btn-outline-success:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.text-center.p-3 {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초간단 레시피 & 밀키트 리뷰</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">자취생/직장인 꿀팁</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recipes-tab">레시피</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews-tab">리뷰</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center bg-primary text-white py-5">
+        <div class="container">
+            <h1 class="display-4">바쁜 당신을 위한 초간단 레시피 & 밀키트 리뷰</h1>
+            <p class="lead">자취생과 직장인을 위한 쉽고 맛있는 요리 꿀팁!</p>
+            <a href="#recipes-tab" class="btn btn-light btn-lg mt-3">레시피 보러가기</a>
+        </div>
+    </section>
+
+    <!-- Main Content with Tabs -->
+    <section class="main-content py-5">
+        <div class="container">
+            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="recipes-tab" data-bs-toggle="tab" data-bs-target="#recipes" type="button" role="tab" aria-controls="recipes" aria-selected="true">레시피</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">리뷰</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <!-- Recipes Tab Content -->
+                <div class="tab-pane fade show active" id="recipes" role="tabpanel" aria-labelledby="recipes-tab">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <h2 class="mb-4">재료 3개로 만드는 뚝딱 '파스타' 레시피</h2>
+                            <p class="lead">냉장고에 있는 재료 3가지만으로 근사한 파스타를 만들 수 있어요!</p>
+
+                            <h3 class="mt-5">재료</h3>
+                            <ul>
+                                <li>파스타면 (1인분)</li>
+                                <li>베이컨 또는 햄 (적당량)</li>
+                                <li>마늘 (3-4쪽)</li>
+                                <li>(선택) 올리브 오일, 소금, 후추</li>
+                            </ul>
+
+                            <h3 class="mt-5">만드는 법</h3>
+                            <ol>
+                                <li>끓는 물에 소금을 약간 넣고 파스타면을 삶아줍니다. (봉투에 적힌 시간 참고)</li>
+                                <li>면이 삶아지는 동안, 베이컨(또는 햄)과 마늘을 먹기 좋게 썰어줍니다.</li>
+                                <li>프라이팬에 올리브 오일을 두르고 썰어둔 마늘을 볶아 향을 냅니다.</li>
+                                <li>마늘 향이 올라오면 베이컨(또는 햄)을 넣고 노릇하게 볶아줍니다.</li>
+                                <li>삶은 파스타면을 프라이팬에 넣고 재료들과 잘 섞어줍니다. 면수 1-2국자를 넣어주면 더욱 촉촉해요.</li>
+                                <li>소금, 후추로 간을 맞추면 초간단 파스타 완성!</li>
+                            </ol>
+                            <p class="mt-4 text-muted">Tip: 기호에 따라 페퍼론치노나 파슬리 가루를 추가하면 더욱 풍미가 살아나요!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab Content -->
+                <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <h2 class="mb-4">편의점 간편식 중 가장 맛있었던 TOP 3 솔직 리뷰</h2>
+                            <p class="lead">바쁜 일상 속 한 줄기 빛! 편의점 간편식, 제가 직접 먹어보고 엄선한 TOP 3를 소개합니다.</p>
+
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h3 class="card-title">1. 혜자로운 집밥 김치제육</h3>
+                                    <p class="card-text">가격 대비 훌륭한 양과 맛! 매콤달콤한 김치제육은 언제 먹어도 실패가 없어요. 밥 한 공기 뚝딱입니다.</p>
+                                    <span class="badge bg-success">강력 추천</span>
+                                </div>
+                            </div>
+
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h3 class="card-title">2. 비비고 소고기 미역국밥</h3>
+                                    <p class="card-text">따뜻하고 든든한 한 끼가 필요할 때 최고! 깊은 미역국 맛에 소고기까지 들어있어 해장용으로도 좋습니다.</p>
+                                    <span class="badge bg-info">든든한 한 끼</span>
+                                </div>
+                            </div>
+
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h3 class="card-title">3. CU 콘치즈 그라탕</h3>
+                                    <p class="card-text">달콤 짭짤한 콘치즈의 조합은 언제나 옳죠. 전자레인지에 돌리면 치즈가 쭉 늘어나서 비주얼도 맛도 최고!</p>
+                                    <span class="badge bg-warning">단짠의 유혹</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-muted">Disclaimer: 위 리뷰는 개인적인 의견이며, 제품의 맛은 개인차가 있을 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 자취생/직장인 꿀팁. All rights reserved.</p>
+            <p>
+                <a href="#" class="text-white me-2">개인정보처리방침</a> |
+                <a href="#" class="text-white ms-2">이용약관</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (Popper included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
