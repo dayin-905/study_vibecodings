@@ -31,5 +31,332 @@
 
 ## 프롬프트 결과(html)
 ```
+<!DOCTYPE html>
+<html lang="ko">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Mark - 혼밥 레시피 💖</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* 컬러 팔레트 정의 */
+        :root {
+            --color-base: #FAFAD2; /* 기본 배경색 (Light Goldenrod Yellow) */
+            --color-point: #3CAEFF; /* 포인트 컬러 (밝은 파랑/하늘색) */
+            --color-secondary: #A2E9FF; /* 세컨드 컬러 (매우 밝은 청록색) */
+            --color-text: #000000; /* 글자 컬러 (검정) */
+            --font-family-main: 'Noto Sans KR', sans-serif;
+            --font-family-accent: 'Dosis', sans-serif; /* 제목/브랜드명 등 강조 폰트 */
+        }
+
+        body {
+            background-color: var(--color-base); /* 기본 배경색 적용 */
+            color: var(--color-text);
+            font-family: var(--font-family-main);
+            line-height: 1.6; /* 가독성을 위한 줄 간격 */
+            display: flex; /* 푸터 하단 고정을 위한 flexbox */
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 1. 네비게이션 바 스타일 */
+        .navbar {
+            background-color: var(--color-secondary) !important; /* 세컨드 컬러 적용 */
+            font-weight: 500;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* 귀여운 그림자 효과 */
+            padding: 0.8rem 1rem; /* 네비게이션 바 높이 조정 */
+        }
+
+        .navbar-brand {
+            font-family: var(--font-family-accent); /* 강조 폰트 */
+            color: var(--color-point) !important; /* 브랜드명에 포인트 컬러 */
+            font-weight: 800;
+            font-size: 1.8rem; /* 브랜드명 크기 키우기 */
+            letter-spacing: -0.5px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .navbar-brand:hover {
+            transform: scale(1.05); /* 호버 시 살짝 커지는 효과 */
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--color-text) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px; /* 메뉴 아이템 둥글게 */
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background-color: var(--color-point);
+            color: white !important;
+        }
+        .navbar-nav .nav-link.active {
+             font-weight: 700; /* 활성 메뉴 더 강조 */
+        }
+
+
+        /* 2. 메인 Jumbotron (Hero Section) 스타일 */
+        .jumbotron-custom {
+            background-color: var(--color-point); /* 포인트 컬러 적용 */
+            color: white;
+            padding: 6rem 3rem !important; /* 내부 패딩 더 강화 */
+            border-radius: 2rem !important; /* 더 둥근 모서리 */
+            box-shadow: 0 10px 25px rgba(60, 174, 255, 0.5); /* 밝고 경쾌한 그림자 */
+            text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.25); /* 텍스트 가독성 + 깊이감 */
+            margin-top: 2rem; /* 상단 여백 */
+            margin-bottom: 3rem !important; /* 하단 여백 추가 */
+            animation: fadeInScale 0.8s ease-out forwards; /* 등장 애니메이션 */
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .jumbotron-custom .display-4 {
+            font-family: var(--font-family-accent); /* 강조 폰트 */
+            font-weight: 800;
+            font-size: 3.5rem; /* 제목 크기 키우기 */
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .jumbotron-custom .lead {
+            font-size: 1.3rem; /* 부제목 크기 키우기 */
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto; /* 아래 여백 증가 */
+        }
+
+        /* 3. 버튼 스타일 */
+        .btn-custom-main {
+            background-color: white; /* 메인 버튼은 흰색으로 대비 효과 */
+            color: var(--color-point); /* 글자색은 포인트 컬러 */
+            border: none; /* 테두리 없애기 */
+            padding: 1rem 2.5rem; /* 버튼 패딩 크게 */
+            border-radius: 50px; /* 더 둥근 알약형 버튼 */
+            font-weight: 700;
+            font-size: 1.15rem; /* 글자 크기 키우기 */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* 부드러운 그림자 */
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1); /* 통통 튀는 애니메이션 */
+        }
+
+        .btn-custom-main:hover {
+            background-color: var(--color-secondary); /* 호버 시 세컨드 컬러로 변색 */
+            color: var(--color-point);
+            transform: translateY(-5px); /* 버튼이 위로 살짝 통통 */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline-search { /* 검색 버튼 스타일 */
+            color: white;
+            background-color: var(--color-point);
+            border-color: var(--color-point);
+            border-radius: 50px; /* 검색 버튼도 둥글게 */
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.5rem 1.2rem;
+        }
+
+        .btn-outline-search:hover {
+            background-color: #3095E7; /* 포인트 컬러보다 약간 진하게 */
+            border-color: #3095E7;
+            transform: translateY(-1px);
+        }
+
+        .form-control.rounded-pill {
+            border-radius: 50px !important; /* 검색창도 둥글게 */
+            border: 2px solid var(--color-point);
+            padding: 0.5rem 1.2rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-control.rounded-pill:focus {
+            border-color: #3095E7;
+            box-shadow: 0 0 0 0.25rem rgba(60, 174, 255, 0.25);
+        }
+
+
+        /* 4. 카드 스타일 (귀여움 및 가독성 강조) */
+        .card-recipe {
+            border: none; /* 기본 부트스트랩 테두리 제거 */
+            background-color: white; /* 카드 배경 흰색으로 가독성 확보 */
+            border-radius: 1.5rem; /* 더 둥근 모서리 */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* 부드러운 그림자 */
+            transition: transform 0.3s cubic-bezier(.17,.67,.83,.67), box-shadow 0.3s; /* 살짝 통통 튀는 호버 애니 */
+            overflow: hidden; /* 이미지 경계 처리 */
+        }
+
+        .card-recipe:hover {
+            transform: translateY(-8px); /* 호버 시 위로 살짝 통통 */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img-top-recipe {
+            height: 220px; /* 이미지 높이 통일 및 약간 확대 */
+            object-fit: cover; /* 이미지가 잘리지 않고 채워지도록 */
+            border-radius: 1.5rem 1.5rem 0 0; /* 상단만 둥글게 */
+            filter: brightness(0.95); /* 이미지 살짝 밝게 */
+        }
+
+        .card-body-recipe {
+            padding: 1.8rem 1.5rem; /* 패딩 증가 */
+            text-align: center; /* 카드 내용 중앙 정렬 */
+        }
+
+        .card-title-recipe {
+            color: var(--color-point); /* 타이틀에 포인트 컬러 적용 */
+            font-family: var(--font-family-accent);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem; /* 제목 아래 여백 */
+            letter-spacing: -0.5px;
+        }
+
+        .card-text-recipe {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-recipe-view {
+            background-color: var(--color-secondary);
+            color: var(--color-point);
+            border: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 30px; /* 더 둥근 버튼 */
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-recipe-view:hover {
+            background-color: var(--color-point);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 5. 푸터 스타일 */
+        footer {
+            background-color: var(--color-secondary); /* 세컨드 컬러 적용 */
+            color: var(--color-text);
+            margin-top: auto; /* 푸터를 하단에 고정 */
+            padding-top: 3rem;
+        }
+
+        footer .container p {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        footer .text-center {
+            background-color: rgba(0, 0, 0, 0.08); /* 하단 카피라이트 배경 */
+            padding: 1rem !important;
+            font-size: 0.9rem;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Food Mark ✨</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">홈 🏡</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipes.html">레시피 🍳</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ingredients.html">식재료 🥕</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2 rounded-pill" type="search" placeholder="궁금한 레시피 검색" aria-label="Search">
+                    <button class="btn btn-outline-search" type="submit">검색 🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="jumbotron-custom text-center">
+            <h1 class="display-4 text-white">💖 혼밥러를 위한 <br>간편 레시피 천국! 💖</h1>
+            <p class="lead text-white">혼자 먹어도 맛있고 예쁘게! Food Mark가 제안하는<br> 트렌디하고 쉬운 초간단 레시피를 지금 바로 만나보세요.</p>
+            <a href="recipes.html" class="btn btn-custom-main">오늘의 추천 레시피 보러 가기! ✨</a>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="text-center mb-5" style="color: var(--color-point); font-family: var(--font-family-accent); font-weight: 800; font-size: 2.5rem; letter-spacing: -1px;">
+                ✨ 인기 만점 레시피 BEST 3 ✨
+            </h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-recipe h-100">
+                        <img src="https://via.placeholder.com/400x220/3CAEFF/FFFFFF?text=Kimchi+Jjigae" class="card-img-top-recipe" alt="김치찌개">
+                        <div class="card-body card-body-recipe">
+                            <h5 class="card-title card-title-recipe">돼지고기 김치찌개 🍲</h5>
+                            <p class="card-text card-text-recipe">한국인의 소울푸드! 15분 만에 뚝딱 만드는 자취생 필수 레시피.</p>
+                            <a href="recipe-detail.html" class="btn btn-recipe-view">레시피 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-recipe h-100">
+                        <img src="https://via.placeholder.com/400x220/A2E9FF/000000?text=Ganjang+Gyeranbap" class="card-img-top-recipe" alt="계란밥">
+                        <div class="card-body card-body-recipe">
+                            <h5 class="card-title card-title-recipe">간장 계란밥 🍳</h5>
+                            <p class="card-text card-text-recipe">바쁜 아침 5분 완성! 실패 없는 황금 비율 마법의 간장 계란밥.</p>
+                            <a href="recipe-detail.html" class="btn btn-recipe-view">레시피 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-recipe h-100">
+                        <img src="https://via.placeholder.com/400x220/FAFAD2/000000?text=Alio+Olio" class="card-img-top-recipe" alt="파스타">
+                        <div class="card-body card-body-recipe">
+                            <h5 class="card-title card-title-recipe">알리오 올리오 🍝</h5>
+                            <p class="card-text card-text-recipe">냉장고 털어 만드는 이탈리아 감성! 레스토랑 부럽지 않은 홈 파스타.</p>
+                            <a href="recipe-detail.html" class="btn btn-recipe-view">레시피 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center text-lg-start">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase" style="font-family: var(--font-family-accent); font-weight: 700; color: var(--color-point);">Food Mark</h5>
+                    <p>
+                        Food Mark는 바쁜 2030 싱글들을 위해 **맛있고, 건강하며, 보기도 예쁜** 트렌디한 레시피를 공유하는 공간입니다. 언제든 놀러오세요!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3">
+            © 2025 Food Mark. All rights reserved. 💖 Bon Appétit!
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
 ```
