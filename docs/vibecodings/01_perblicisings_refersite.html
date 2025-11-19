@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Mark - 혼밥 레시피 💖</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&family=Great+Vibes&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <style>
@@ -14,17 +14,19 @@
         :root {
             --color-base: #FAFAD2; /* 기본 배경색 (Light Goldenrod Yellow) */
             --color-point: #3CAEFF; /* 포인트 컬러 (밝은 파랑/하늘색) */
-            --color-secondary: #A2E9FF; /* 세컨드 컬러 (매우 밝은 청록색) */
-            --color-text: #000000; /* 글자 컬러 (검정) */
-            --font-family-main: 'Noto Sans KR', sans-serif;
-            --font-family-accent: 'Dosis', sans-serif; /* 제목/브랜드명 등 강조 폰트 */
+            --color-secondary: #E0D8B0; /* 빈티지 베이지 톤 (세컨드 컬러) */
+            --color-text: #333333; /* 글자 컬러 (어두운 회색) */
+            --color-dark-text: #000000; /* 검정 글자 */
+            --font-family-main: 'Lora', 'Noto Sans KR', serif;
+            --font-family-heading: 'Playfair Display', serif; /* 제목/브랜드명 등 강조 폰트 */
+            --font-family-accent: 'Great Vibes', cursive; /* 스크립트/손글씨 폰트 */
         }
 
         body {
             background-color: var(--color-base); /* 기본 배경색 적용 */
             color: var(--color-text);
             font-family: var(--font-family-main);
-            line-height: 1.6; /* 가독성을 위한 줄 간격 */
+            line-height: 1.8; /* 가독성을 위한 줄 간격 */
             display: flex; /* 푸터 하단 고정을 위한 flexbox */
             flex-direction: column;
             min-height: 100vh;
@@ -234,26 +236,49 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Food Mark ✨</a>
+            <a class="navbar-brand text-uppercase" href="index.html" style="font-family: var(--font-family-heading); font-weight: 700; font-size: 2rem; letter-spacing: 1px; color: var(--color-dark-text) !important;">Vintage Bakery</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">홈 🏡</a>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOurBakeries" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Bakeries
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownOurBakeries">
+                            <li><a class="dropdown-item" href="#">Signature Items</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="recipes.html">레시피 🍳</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRecipes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Recipes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownRecipes">
+                            <li><a class="dropdown-item" href="#">Morning Loaves</a></li>
+                            <li><a class="dropdown-item" href="#">Sweet Delights</a></li>
+                            <li><a class="dropdown-item" href="#">Daily Bread</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ingredients.html">식재료 🥕</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownJournalAdmin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Journal & Admin
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownJournalAdmin">
+                            <li><a class="dropdown-item" href="#">Archive Calendar</a></li>
+                            <li><a class="dropdown-item" href="#">Admin Dashboard (CRUD)</a></li>
+                        </ul>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2 rounded-pill" type="search" placeholder="궁금한 레시피 검색" aria-label="Search">
-                    <button class="btn btn-outline-search" type="submit">검색 🔍</button>
+                <form class="d-flex ms-3">
+                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-search" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-outline-search ms-2" type="button">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
                 </form>
             </div>
         </div>
